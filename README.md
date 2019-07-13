@@ -22,3 +22,7 @@ It is a difficult and elusive idea to capture and we have been trying very hard 
 
 We decided that an emotional piece of jewellery that connects two people when they are apart is the way to go and have been working on creating a versatile piece that is suitable for daily wear and long term use. It has been very challenging to create something beautiful, discrete and wearable. 
 
+## Project Resources and Links
+* [Figma Project](https://www.figma.com/file/CRX1RBiBTCXDojCIdjyF6kuF/Closr-App)
+* [Zeplin Project](https://zpl.io/scene/2pMLxkr)
+* [Trello Project](https://trello.com/b/B2NmxSPx/closr-mvp)
