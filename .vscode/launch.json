@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Flutter: Run all Tests",
+      "type": "dart",
+      "request": "launch",
+      "program": "./test/"
+    },
+    {
+      "name": "ClosrPrototype-Dev",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_dev.dart",
+      // "args": ["--flavor", "dev", "-v"]
+    },
+    {
+      "name": "ClosrPrototype-Staging",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_staging.dart",
+      "args": ["--flavor", "staging", "-v"]
+    },
+    {
+      "name": "ClosrPrototype-Prod",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_prod.dart",
+      "args": ["--flavor", "prod"]
+    }
+  ]
+}
