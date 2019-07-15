@@ -9,14 +9,14 @@ class TestView extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Container(
-          child:  RaisedButton(
-                onPressed: () {
-                  showSimpleNotification(
-                      Text("this is a message from simple notification"),
-                      background: Colors.green);
-                },
-                child: Text("Auto Dimiss Notification"),
-              ),
+          child: RaisedButton(
+            onPressed: () {
+              showSimpleNotification(
+                  Text("this is a message from simple notification"),
+                  background: Colors.green);
+            },
+            child: Text("Auto Dimiss Notification"),
+          ),
         ),
       ),
     );
