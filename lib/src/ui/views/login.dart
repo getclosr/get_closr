@@ -4,6 +4,7 @@ import 'package:get_closr/src/core/enums/form_mode.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:get_closr/src/ui/shared/app_colors.dart' as prefix0;
+import 'package:get_closr/src/ui/shared/screensize_reducers.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({Key key}) : super(key: key);
@@ -38,9 +39,10 @@ class _LoginViewState extends State<LoginView> {
               Flexible(
                 flex: 1,
                 child: Container(
+                    height: screenHeightExcludingToolbar(context, dividedBy: 3),
                     child: Image.asset(
-                  'assets/images/Closr_logo.png',
-                )),
+                      'assets/images/Closr_logo.png',
+                    )),
               ),
               SignInButtonBuilder(
                 icon: Icons.email,
@@ -58,9 +60,6 @@ class _LoginViewState extends State<LoginView> {
                   Navigator.pushNamed(context, homeRoute, arguments: 'Alex');
                 },
               ),
-              // showPrimaryButton(context),
-              // googleLoginButton(context),
-              // switchButton(),
             ],
           ),
         ),
@@ -70,9 +69,7 @@ class _LoginViewState extends State<LoginView> {
 
   Widget showPrimaryButton(context) {
     return RaisedButton(
-      child:
-          // model.mode == FormMode.Login ? Text('Login') : Text('Create Account'),
-          Text('Login'),
+      child: Text('Login'),
       elevation: 2.0,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
       color: Theme.of(context).buttonColor,

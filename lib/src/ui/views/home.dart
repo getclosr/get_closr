@@ -1,6 +1,7 @@
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:get_closr/src/ui/shared/app_colors.dart';
+import 'package:get_closr/src/ui/shared/screensize_reducers.dart';
 import 'package:get_closr/src/ui/shared/ui_helper.dart';
 import 'package:get_closr/src/ui/widgets/chat/chat_bottom_sheet.dart';
 import 'package:get_closr/src/ui/widgets/touch/touch_button.dart';
@@ -62,16 +63,12 @@ class _HomeViewState extends State<HomeView> {
         alignment: childAlignment,
         child: ListView(
           children: <Widget>[
-            Container(
-              alignment: Alignment.centerLeft,
-              height: 40,
-              child: Text(
-                'Welcome! User',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                ),
+            Text(
+              'Welcome! User',
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
               ),
             ),
             UIHelper.verticalSpaceSmall(),
@@ -174,35 +171,37 @@ class _HomeViewState extends State<HomeView> {
                 ),
               ),
             ),
+            UIHelper.verticalSpaceSmall(),
             Text(
               'Send a touch now',
               textAlign: TextAlign.left,
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 15,
                 fontWeight: FontWeight.bold,
               ),
             ),
             UIHelper.verticalSpaceSmall(),
             Container(
-              height: MediaQuery.of(context).size.height / 10,
+              height: screenHeight(context, dividedBy:10),
               decoration: BoxDecoration(
                 color: kClosrPink100,
                 borderRadius: BorderRadius.circular(20.0),
               ),
               child: TouchButton(),
             ),
-            UIHelper.verticalSpaceSmall(),
+
+            UIHelper.verticalSpaceMedium(),
             Text(
               'Rate your last touch',
               textAlign: TextAlign.left,
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 15,
                 fontWeight: FontWeight.bold,
               ),
             ),
             UIHelper.verticalSpaceSmall(),
             Container(
-              height: MediaQuery.of(context).size.height / 10,
+              height: screenHeight(context, dividedBy: 15),
               decoration: BoxDecoration(
                 color: kClosrPink100,
                 borderRadius: BorderRadius.circular(20.0),
