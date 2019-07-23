@@ -1,12 +1,14 @@
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter/material.dart';
-import 'package:get_closr/src/core/app_constants.dart';
 import 'package:get_closr/src/ui/shared/app_colors.dart';
 import 'package:get_closr/src/ui/shared/ui_helper.dart';
 import 'package:get_closr/src/ui/widgets/chat/chat_bottom_sheet.dart';
 import 'package:get_closr/src/ui/widgets/touch/touch_button.dart';
 import 'package:get_closr/src/ui/widgets/touch/touch_rating.dart';
 import 'package:keyboard_visibility/keyboard_visibility.dart';
+
+// import 'package:get_closr/src/core/app_constants.dart';
+// import 'package:carousel_slider/carousel_slider.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key key}) : super(key: key);
@@ -73,27 +75,104 @@ class _HomeViewState extends State<HomeView> {
               ),
             ),
             UIHelper.verticalSpaceSmall(),
-            CarouselSlider(
-              height: MediaQuery.of(context).size.height / 10 * 4,
-              viewportFraction: 0.9,
-              aspectRatio: 2.0,
-              autoPlay: true,
-              enlargeCenterPage: true,
-              items: imgList.map(
-                (url) {
-                  return Container(
-                    margin: EdgeInsets.all(5.0),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                      child: Image.network(
-                        url,
-                        fit: BoxFit.cover,
-                        width: 1000.0,
+            // CarouselSlider(
+            //   height: MediaQuery.of(context).size.height / 10 * 4,
+            //   viewportFraction: 0.9,
+            //   aspectRatio: 2.0,
+            //   autoPlay: true,
+            //   enlargeCenterPage: true,
+            //   items: imgList.map(
+            //     (url) {
+            //       return Container(
+            //         margin: EdgeInsets.all(5.0),
+            //         child: ClipRRect(
+            //           borderRadius: BorderRadius.all(Radius.circular(10.0)),
+            //           child: Image.network(
+            //             url,
+            //             fit: BoxFit.cover,
+            //             width: 1000.0,
+            //           ),
+            //         ),
+            //       );
+            //     },
+            //   ).toList(),
+            // ),
+            Text(
+              'Your Closr People',
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            UIHelper.verticalSpaceSmall(),
+            Container(
+              height: MediaQuery.of(context).size.height / 10,
+              decoration: BoxDecoration(
+                color: kClosrPink100,
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    CircularProfileAvatar(
+                      'https://avatars0.githubusercontent.com/u/8264639?s=460&v=4',
+                      radius: 40,
+                      backgroundColor: Colors.green,
+                      borderWidth: 2,
+                      initialsText: Text(
+                        "AD",
+                        style: TextStyle(fontSize: 40, color: Colors.white),
                       ),
+                      borderColor: Colors.brown,
+                      elevation: 5.0,
+                      onTap: () {
+                        print('adil');
+                      },
                     ),
-                  );
-                },
-              ).toList(),
+                    CircularProfileAvatar(
+                      'https://avatars0.githubusercontent.com/u/8264639?s=460&v=4',
+                      radius: 40,
+                      backgroundColor: Colors.green,
+                      borderWidth: 5,
+                      initialsText: Text(
+                        "AD",
+                        style: TextStyle(fontSize: 40, color: Colors.white),
+                      ),
+                      borderColor: Colors.yellow,
+                      elevation: 5.0,
+                      foregroundColor: Colors.yellow.withOpacity(0.5),
+                      onTap: () {
+                        print('adil');
+                      },
+                      showInitialTextAbovePicture: true,
+                    ),
+                    CircularProfileAvatar(
+                      '',
+                      radius: 40,
+                      backgroundColor: Colors.green,
+                      initialsText: Text(
+                        "AD",
+                        style: TextStyle(fontSize: 40, color: Colors.white),
+                      ),
+                      elevation: 5.0,
+                    ),
+                    CircularProfileAvatar(
+                      '',
+                      radius: 40,
+                      backgroundColor: Colors.green,
+                      initialsText: Text(
+                        "AD",
+                        style: TextStyle(fontSize: 40, color: Colors.white),
+                      ),
+                      elevation: 5.0,
+                    ),
+
+                  ],
+                ),
+              ),
             ),
             Text(
               'Send a touch now',

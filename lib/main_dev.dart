@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get_closr/src/core/app_constants.dart';
 import 'package:get_closr/src/ui/shared/theme.dart';
 import 'package:get_closr/src/utils/router.dart';
@@ -14,10 +15,16 @@ class ClosrApp extends StatefulWidget {
 class _ClosrAppState extends State<ClosrApp> {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      systemNavigationBarColor: Colors.grey[200],
+      systemNavigationBarIconBrightness: Brightness.dark,
+      systemNavigationBarDividerColor: Colors.black
+    ));
+
     return OverlaySupport(
       child: MaterialApp(
         title: 'Closr App',
-        theme: buildClosrTheme(1),
+        // theme: buildClosrTheme(1),
         onGenerateRoute: Router.generateRoute,
         initialRoute: loginRoute,
       ),
